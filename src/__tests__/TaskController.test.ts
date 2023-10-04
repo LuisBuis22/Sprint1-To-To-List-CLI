@@ -1,4 +1,4 @@
-import { TaskController } from "../src/controllers/TaskController";
+import { TaskController } from "../controllers/TaskController";
 
 describe("TaskController", () => {
   let taskController: TaskController;
@@ -32,13 +32,11 @@ describe("TaskController", () => {
       const tasksBeforeDeletion = taskController.getTasks();
       const taskIdToDelete = tasksBeforeDeletion[0].id;
 
-      // Eliminar la primera tarea en la lista
       taskController.deleteTask(taskIdToDelete);
 
-      // Verificar que la tarea se haya eliminado correctamente
       const tasksAfterDeletion = taskController.getTasks();
       expect(
-        tasksAfterDeletion.find((task) => task.id === taskIdToDelete)
+        tasksAfterDeletion.find((task: { id: any; }) => task.id === taskIdToDelete)
       ).toBeUndefined();
     });
   });
