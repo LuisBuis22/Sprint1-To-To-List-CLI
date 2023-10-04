@@ -78,4 +78,8 @@ program
 
 
 
+<<<<<<< HEAD
 program.parse(process.argv);
+=======
+program.parse(process.argv);
+>>>>>>> 1ecabc1d1ec481e3d9589f73d0c3b2b3d75a6f7c
