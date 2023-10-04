@@ -65,5 +65,23 @@ class TaskController {
         }
         return false;
     }
+    checkTask(taskId) {
+        const task = this.tasks.find((task) => task.id === taskId);
+        if (task) {
+            task.completed = true;
+            this.saveTasks();
+            return true;
+        }
+        return false;
+    }
+    unCheckTask(taskId) {
+        const task = this.tasks.find((task) => task.id === taskId);
+        if (task) {
+            task.completed = false;
+            this.saveTasks();
+            return true;
+        }
+        return false;
+    }
 }
 exports.TaskController = TaskController;

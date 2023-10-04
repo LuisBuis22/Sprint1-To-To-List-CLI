@@ -31,11 +31,8 @@ describe("TaskController", () => {
     it("debería eliminar una tarea correctamente", () => {
       const tasksBeforeDeletion = taskController.getTasks();
       const taskIdToDelete = tasksBeforeDeletion[0].id;
-
-      // Eliminar la primera tarea en la lista
       taskController.deleteTask(taskIdToDelete);
-
-      // Verificar que la tarea se haya eliminado correctamente
+      
       const tasksAfterDeletion = taskController.getTasks();
       expect(
         tasksAfterDeletion.find((task) => task.id === taskIdToDelete)

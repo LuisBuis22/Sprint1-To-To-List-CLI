@@ -34,6 +34,33 @@ program
   });
 
   program
+  .command('check <taskId>')
+  .description('Marca una tarea como completada')
+  .action((taskId) => {
+    const id = parseInt(taskId);
+    const done = taskController.checkTask(id);
+    if (done) {
+      console.log(`Tarea con ID ${id} marcada como completada.`);
+    } else {
+      console.log(`No se encontró una tarea con el ID ${id}.`);
+    }
+  });
+
+  program
+  .command('uncheck <taskId>')
+  .description('Desmarcar una tarea marcada anteriormente como completada')
+  .action((taskId) => {
+    const id = parseInt(taskId);
+    const undone = taskController.unCheckTask(id);
+    if (undone) {
+      console.log(`Tarea con ID ${id} desmarcada.`);
+    } else {
+      console.log(`No se encontró una tarea con el ID ${id}.`);
+    }
+  });
+
+
+  program
   .command("delete <taskId>")
   .description("Elimina una tarea por su ID.")
   .action((taskId) => {
@@ -48,6 +75,7 @@ program
       console.log(`No se encontró una tarea con el ID ${id}.`);
     }
   });
+
 
 
 program.parse(process.argv);
