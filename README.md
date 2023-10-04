@@ -24,3 +24,5 @@ Para ello, he usado typescript, jest para hacer tests unitarios, la extensión c
 - `npm start list`  --->  Visualizar lista de tareas
 - `npm start add`   --->  Seguido de el nombre de la tarea, añadir tarea a la lista
 - `npm start delete`  --->  Seguido del ID de la tarea, que se encuentra en tasks.json, eliminar tarea de la lista
+- `npm start check`   --->  Seguido del ID de la tarea, marcar tarea.
+- `npm start uncheck`  ---> Seguido del ID de la tarea, desmarcar tarea.
