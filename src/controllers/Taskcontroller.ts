@@ -42,14 +42,31 @@ export class TaskController {
 
   public deleteTask(taskId: number): boolean {
     const taskIndex = this.tasks.findIndex((task) => task.id === taskId);
-  
     if (taskIndex !== -1) {
       this.tasks.splice(taskIndex, 1);
       this.saveTasks();
-      return true; 
+      return true;
     }
-  
-    return false; 
+    return false;
   }
-  
+
+  public checkTask(taskId: number): boolean {
+    const task = this.tasks.find((task) => task.id === taskId);
+    if (task) {
+      task.completed = true;
+      this.saveTasks();
+      return true;
+    }
+    return false;
+  }
+
+  public unCheckTask(taskId:number):boolean {
+    const task = this.tasks.find((task) => task.id === taskId);
+    if (task) {
+      task.completed = false;
+      this.saveTasks();
+      return true;
+    }
+    return false;
+  }
 }
