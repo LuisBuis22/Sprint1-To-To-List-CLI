@@ -1,5 +1,5 @@
 import { Command } from "commander";
-import { TaskController } from "../controllers/TaskController";
+import { TaskController } from "../controllers/Taskcontroller";
 
 const program = new Command();
 const taskController = new TaskController();
