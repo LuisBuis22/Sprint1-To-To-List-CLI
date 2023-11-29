@@ -1,4 +1,4 @@
-import { TaskController } from "../controllers/Taskcontroller";
+import { TaskController } from "../controllers/TaskController";
 
 describe("TaskController", () => {
   let taskController: TaskController;
@@ -32,11 +32,8 @@ describe("TaskController", () => {
       const tasksBeforeDeletion = taskController.getTasks();
       const taskIdToDelete = tasksBeforeDeletion[0].id;
 
-<<<<<<< HEAD
-=======
       taskController.deleteTask(taskIdToDelete);
 
->>>>>>> ce7c01ca4eab681127080892ace8407410d1faca
       const tasksAfterDeletion = taskController.getTasks();
       expect(
         tasksAfterDeletion.find((task: { id: any; }) => task.id === taskIdToDelete)
