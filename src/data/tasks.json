@@ -1,10 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Ir al gym",
-    "completed": false
-  },
-  {
     "id": 2,
     "title": "Ir al super",
     "completed": false
@@ -12,6 +7,11 @@
   {
     "id": 3,
     "title": "Acabar Sprint 1",
-    "completed": true
+    "completed": false
+  },
+  {
+    "id": 4,
+    "title": "Nueva tarea",
+    "completed": false
   }
 ]
