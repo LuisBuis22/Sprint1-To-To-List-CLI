@@ -48,7 +48,6 @@ export class TaskController {
       return true;
     }
     return false;
-<<<<<<< HEAD
   }
 
   public checkTask(taskId: number): boolean {
@@ -71,27 +70,3 @@ export class TaskController {
     return false;
   }
 }
-=======
-  }
-
-  public checkTask(taskId: number): boolean {
-    const task = this.tasks.find((task) => task.id === taskId);
-    if (task) {
-      task.completed = true;
-      this.saveTasks();
-      return true;
-    }
-    return false;
-  }
-
-  public unCheckTask(taskId:number):boolean {
-    const task = this.tasks.find((task) => task.id === taskId);
-    if (task) {
-      task.completed = false;
-      this.saveTasks();
-      return true;
-    }
-    return false;
-  }
-}
->>>>>>> 1ecabc1d1ec481e3d9589f73d0c3b2b3d75a6f7c

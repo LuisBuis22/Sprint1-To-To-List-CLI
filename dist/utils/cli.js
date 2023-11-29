@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const commander_1 = require("commander");
-const Taskcontroller_1 = require("../controllers/Taskcontroller");
+const TaskController_1 = require("../controllers/TaskController");
 const program = new commander_1.Command();
-const taskController = new Taskcontroller_1.TaskController();
+const taskController = new TaskController_1.TaskController();
 program
     .version("1.0.0")
     .description("Una aplicación de lista de tareas simple en línea de comandos.");
@@ -13,6 +13,7 @@ program
     .description("Lista todas las tareas.")
     .action(() => {
     const tasks = taskController.getTasks();
+    console.log("Tareas:", tasks);
     if (tasks.length === 0) {
         console.log("No hay tareas.");
     }
@@ -72,4 +73,3 @@ program
         console.log(`No se encontró una tarea con el ID ${id}.`);
     }
 });
-program.parse(process.argv);

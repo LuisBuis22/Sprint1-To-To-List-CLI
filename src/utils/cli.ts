@@ -14,6 +14,7 @@ program
   .description("Lista todas las tareas.")
   .action(() => {
     const tasks = taskController.getTasks();
+    console.log("Tareas:", tasks);
     if (tasks.length === 0) {
       console.log("No hay tareas.");
     } else {
@@ -76,10 +77,3 @@ program
     }
   });
 
-
-
-<<<<<<< HEAD
-program.parse(process.argv);
-=======
-program.parse(process.argv);
->>>>>>> 1ecabc1d1ec481e3d9589f73d0c3b2b3d75a6f7c

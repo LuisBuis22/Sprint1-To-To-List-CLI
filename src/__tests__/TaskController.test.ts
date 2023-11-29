@@ -31,14 +31,7 @@ describe("TaskController", () => {
     it("debería eliminar una tarea correctamente", () => {
       const tasksBeforeDeletion = taskController.getTasks();
       const taskIdToDelete = tasksBeforeDeletion[0].id;
-<<<<<<< HEAD:src/__tests__/TaskController.test.ts
 
-      taskController.deleteTask(taskIdToDelete);
-
-=======
-      taskController.deleteTask(taskIdToDelete);
-      
->>>>>>> 1ecabc1d1ec481e3d9589f73d0c3b2b3d75a6f7c:__tests__/TaskController.test.ts
       const tasksAfterDeletion = taskController.getTasks();
       expect(
         tasksAfterDeletion.find((task: { id: any; }) => task.id === taskIdToDelete)
